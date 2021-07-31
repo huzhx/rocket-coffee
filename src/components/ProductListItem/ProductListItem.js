@@ -1,10 +1,12 @@
 import React from 'react';
 import './ProductListItem.css';
 
-const ProductListItem = ({ name, price, imageUrl, onAddToCart, isSoldOut }) => {
+const ProductListItem = ({ name, price, imageUrl, onAddToCart, isSoldOut, onSale }) => {
   return (
-    <div className="card">
-      <h2>{name}</h2>
+    <div className={onSale ? ['card', 'on-sale'].join(' ') : 'card'}>
+      <h2>
+        {name} {onSale ? '(On Sale)' : ''}
+      </h2>
       <img src={imageUrl} alt="" />
       <small>{price}</small>
       <button onClick={onAddToCart} disabled={isSoldOut}>

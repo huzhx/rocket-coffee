@@ -16,3 +16,7 @@
 .card small::before {
   content: '$';
 }
+
+.on-sale {
+  background-color: #e8f6ff;
+}
